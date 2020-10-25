@@ -1,13 +1,24 @@
 ############################################################
-@local = https://localhost:6999
+@local = https://localhost:6767
 @deploy = https://
 
 ############################################################
 ### local test requests
-POST {{local}}/route
+POST {{local}}/getResponse
 content-type: application/json
 
 {
+    "id": "gaga",
+    "data": "111"
+}
+
+###
+POST {{local}}/getProxyResponse
+content-type: application/json
+
+{
+    "id": "gaga",
+    "data": "111"
 }
 
 ############################################################
@@ -16,4 +27,6 @@ POST {{deploy}}/route
 content-type: application/json
 
 {
+    "id": "gaga",
+    "data": "111"
 }
